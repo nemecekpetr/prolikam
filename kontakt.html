@@ -4,23 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontakt | ProLikam - Plzeň, telefon, email</title>
-    <meta name="description" content="Kontaktujte ProLikam s.r.o. - 28. října 1824/70, 301 00 Plzeň, Bolevec. Telefon: +420 731 242 645, Email: kucera@prolikam.cz">
+    <meta name="description" content="Kontaktujte ProLikam s.r.o. - 28. října 1824/70, 301 00 Plzeň, Bolevec. Telefon: +420 731 242 645, Email: info@prolikam.cz">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <a href="#main" class="skip-link">Přeskočit na obsah</a>
+
     <!-- Navigation -->
     <nav>
         <a href="index.html" class="logo"><img src="logo.jpg" alt="ProLikam"></a>
         <ul class="nav-links">
             <li><a href="o-nas.html">O nás</a></li>
             <li><a href="sluzby.html">Služby</a></li>
-            <li><a href="produkty.html">Produkty</a></li>
+            <li><a href="realizace.html">Realizace</a></li>
             <li><a href="technologie.html">Technologie</a></li>
             <li><a href="partneri.html">Partneři</a></li>
         </ul>
         <a href="kontakt.html" class="nav-cta active">Kontakt</a>
-        <button class="mobile-menu-btn" aria-label="Menu">
+        <button class="mobile-menu-btn" aria-label="Otevřít menu" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
@@ -32,7 +36,7 @@
         <ul>
             <li><a href="o-nas.html">O nás</a></li>
             <li><a href="sluzby.html">Služby</a></li>
-            <li><a href="produkty.html">Produkty</a></li>
+            <li><a href="realizace.html">Realizace</a></li>
             <li><a href="technologie.html">Technologie</a></li>
             <li><a href="partneri.html">Partneři</a></li>
             <li><a href="kontakt.html">Kontakt</a></li>
@@ -40,14 +44,14 @@
     </div>
 
     <!-- Page Header -->
-    <header class="page-header">
+    <header class="page-header" id="main">
         <div class="breadcrumb">
             <a href="index.html">Úvod</a>
             <span>›</span>
             Kontakt
         </div>
         <h1>Kontaktujte nás</h1>
-        <p>Máte dotaz nebo zájem o naše služby? Rádi vám pomůžeme.</p>
+        <p>Máte dotaz nebo zájem o naše služby? Nabízíme bezplatnou úvodní konzultaci přímo na místě vaší budoucí stavby.</p>
     </header>
 
     <!-- Contact Section -->
@@ -55,89 +59,113 @@
         <div class="contact-grid">
             <div class="contact-info">
                 <h2>Ozvěte se nám</h2>
-                <p>Ať už máte konkrétní projekt nebo jen chcete zjistit více o našich službách, neváhejte nás kontaktovat. Nabízíme bezplatnou úvodní konzultaci.</p>
+                <p>Ať už máte konkrétní projekt nebo jen chcete zjistit více, neváhejte. Odpovíme zpravidla do 24 hodin.</p>
 
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <div class="contact-icon">📍</div>
-                        <div>
+                <div class="contact-channels">
+                    <a href="tel:+420731242645" class="contact-channel">
+                        <div class="channel-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </div>
+                        <div class="channel-text">
+                            <h4>Telefon</h4>
+                            <p>+420 731 242 645</p>
+                        </div>
+                    </a>
+
+                    <a href="mailto:info@prolikam.cz" class="contact-channel">
+                        <div class="channel-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <div class="channel-text">
+                            <h4>Email</h4>
+                            <p>info@prolikam.cz</p>
+                        </div>
+                    </a>
+
+                    <a href="https://maps.google.com/?q=28.+října+1824/70,+301+00+Plzeň" target="_blank" rel="noopener" class="contact-channel">
+                        <div class="channel-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div class="channel-text">
                             <h4>Adresa</h4>
                             <p>28. října 1824/70<br>301 00 Plzeň, Bolevec</p>
                         </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">📞</div>
-                        <div>
-                            <h4>Telefon</h4>
-                            <a href="tel:+420731242645">+420 731 242 645</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">✉️</div>
-                        <div>
-                            <h4>Email</h4>
-                            <a href="mailto:kucera@prolikam.cz">kucera@prolikam.cz</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">🌐</div>
-                        <div>
-                            <h4>Web</h4>
-                            <a href="https://www.prolikam.cz" target="_blank">www.prolikam.cz</a>
-                        </div>
-                    </div>
-                </div>
+                    </a>
 
-                <div class="contact-hours">
-                    <h4 style="margin-bottom: 1rem; color: var(--earth-dark);">Otevírací doba</h4>
-                    <p style="color: var(--earth);">
-                        Pondělí - Pátek: 8:00 - 17:00<br>
-                        Sobota - Neděle: Po domluvě
-                    </p>
+                    <div class="contact-channel">
+                        <div class="channel-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <div class="channel-text">
+                            <h4>Provozní doba</h4>
+                            <p>Po-Pá: 8:00 - 17:00</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div class="contact-form">
-                <form>
-                    <div class="form-group">
-                        <label for="name">Jméno a příjmení *</label>
-                        <input type="text" id="name" name="name" required placeholder="Vaše jméno">
+                <h3 class="form-title">Poptávkový formulář</h3>
+                <p class="form-subtitle">Vyplňte formulář a ozveme se vám zpravidla do 24 hodin.</p>
+
+                <form id="contactForm" action="https://formsubmit.co/info@prolikam.cz" method="POST" novalidate>
+                    <input type="hidden" name="_subject" value="Nová poptávka z webu prolikam.cz">
+                    <input type="hidden" name="_next" value="https://prolikam.cz/kontakt.html?sent=1">
+                    <input type="hidden" name="_captcha" value="true">
+                    <input type="text" name="_honey" style="display:none">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Jméno a příjmení <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required placeholder="Jan Novák" autocomplete="name">
+                            <span class="error-msg">Prosím vyplňte jméno</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="jan@email.cz" autocomplete="email">
+                            <span class="error-msg">Prosím zadejte platný email</span>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required placeholder="vas@email.cz">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Telefon</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+420 xxx xxx xxx" autocomplete="tel">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Předmět zájmu</label>
+                            <select id="subject" name="subject">
+                                <option value="">Vyberte...</option>
+                                <option value="vystavba">Výstavba rodinného domu</option>
+                                <option value="rekonstrukce">Rekonstrukce</option>
+                                <option value="projekce">Projekce a design</option>
+                                <option value="zakazkova-vyroba">Zakázková výroba</option>
+                                <option value="partnerstvi">Partnerství</option>
+                                <option value="jine">Jiné</option>
+                            </select>
+                        </div>
                     </div>
+
                     <div class="form-group">
-                        <label for="phone">Telefon</label>
-                        <input type="tel" id="phone" name="phone" placeholder="+420 xxx xxx xxx">
+                        <label for="message">Zpráva <span class="required">*</span></label>
+                        <textarea id="message" name="message" required placeholder="Popište váš projekt, představy nebo dotaz..."></textarea>
+                        <span class="error-msg">Prosím napište zprávu</span>
                     </div>
-                    <div class="form-group">
-                        <label for="subject">Předmět zájmu</label>
-                        <select id="subject" name="subject">
-                            <option value="">Vyberte...</option>
-                            <option value="vystavba">Výstavba rodinného domu</option>
-                            <option value="rekonstrukce">Luxusní rekonstrukce</option>
-                            <option value="vany">Betonové vany</option>
-                            <option value="umyvadla">Betonová umyvadla</option>
-                            <option value="topeni">Betonové topení</option>
-                            <option value="kolekce">Koupelnové kolekce</option>
-                            <option value="zahrada">Zahradní mobiliář</option>
-                            <option value="partnerstvi">Partnerství</option>
-                            <option value="jine">Jiné</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Zpráva *</label>
-                        <textarea id="message" name="message" required placeholder="Napište nám, jak vám můžeme pomoci..."></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label style="display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer;">
-                            <input type="checkbox" name="gdpr" required style="width: auto; margin-top: 0.25rem;">
-                            <span style="font-size: 0.85rem; color: var(--earth);">Souhlasím se zpracováním osobních údajů za účelem zodpovězení dotazu. Více informací v <a href="#" style="color: var(--sage-dark);">Ochraně osobních údajů</a>.</span>
-                        </label>
-                    </div>
-                    <button type="submit" class="btn-primary">Odeslat zprávu</button>
+
+                    <label class="form-gdpr">
+                        <input type="checkbox" name="gdpr" required>
+                        <span>Souhlasím se zpracováním osobních údajů za účelem zodpovězení dotazu. Více v <a href="ochrana-osobnich-udaju.html">Ochraně osobních údajů</a>.</span>
+                    </label>
+
+                    <button type="submit" class="form-submit">Odeslat poptávku</button>
                 </form>
+
+                <div class="form-success" id="formSuccess">
+                    <div class="form-success-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <h3>Poptávka odeslána</h3>
+                    <p>Děkujeme za váš zájem. Ozveme se vám zpravidla do 24 hodin v pracovní dny.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -152,7 +180,7 @@
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-            title="Mapa - ProLikam s.r.o., Plzeň">
+            title="Mapa - ProLikam s.r.o., 28. října 1824/70, Plzeň">
         </iframe>
     </section>
 
@@ -167,29 +195,32 @@
                 <div class="product-card-content">
                     <h3>Sídlo společnosti</h3>
                     <p>
+                        ProLikam s.r.o.<br>
                         28. října 1824/70<br>
-                        301 00 Plzeň, Bolevec<br>
-                        Česká republika
+                        301 00 Plzeň - Bolevec
+                    </p>
+                    <p style="margin-top: 0.5rem;"><strong>Jednatel:</strong> František Kučera</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-card-content">
+                    <h3>Fakturační údaje</h3>
+                    <p>
+                        IČ: 23944692<br>
+                        DIČ: CZ23944692
+                    </p>
+                    <p style="margin-top: 0.5rem;">
+                        Spisová značka: C 47550<br>
+                        Krajský soud v Plzni
                     </p>
                 </div>
             </div>
             <div class="product-card">
                 <div class="product-card-content">
-                    <h3>Identifikační údaje</h3>
+                    <h3>Kontaktní údaje</h3>
                     <p>
-                        IČO: XXXXXXXX<br>
-                        DIČ: CZXXXXXXXX<br>
-                        Zapsáno v OR vedeném u KS Plzeň
-                    </p>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-card-content">
-                    <h3>Bankovní spojení</h3>
-                    <p>
-                        Číslo účtu: XXXXXXXXXX/XXXX<br>
-                        IBAN: CZXXXXXXXXXXXXXXXXXX<br>
-                        BIC/SWIFT: XXXXXXXXXXX
+                        Tel: <a href="tel:+420731242645">+420 731 242 645</a><br>
+                        Email: <a href="mailto:info@prolikam.cz">info@prolikam.cz</a>
                     </p>
                 </div>
             </div>
@@ -197,47 +228,50 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="content-section" style="background: var(--sand);">
+    <section class="content-section" style="background: var(--off-white);">
         <div class="section-header">
             <span class="section-tag">FAQ</span>
             <h2 class="section-title">Časté dotazy</h2>
             <p class="section-subtitle">Odpovědi na nejčastější otázky našich klientů.</p>
         </div>
-        <div class="products-grid" style="max-width: 1000px; margin: 0 auto;">
-            <div class="product-card">
-                <div class="product-card-content">
-                    <h3>Jak dlouho trvá výroba betonové vany?</h3>
-                    <p>Standardní doba výroby je 4-6 týdnů od schválení návrhu. Záleží na složitosti produktu a aktuální vytíženosti výroby.</p>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    Co se stane po odeslání poptávky?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Jakmile nám napíšete nebo zavoláte, domluvíme si osobní schůzku přímo na místě vaší stavby. Prostor si odborně zaměříme a nafotíme. Při této příležitosti od nás obdržíte informační materiály. Následně vypracujeme přesný položkový rozpočet v programu KROS.</p>
                 </div>
             </div>
-            <div class="product-card">
-                <div class="product-card-content">
-                    <h3>Poskytujete dopravu a instalaci?</h3>
-                    <p>Ano, zajišťujeme kompletní servis včetně dopravy a odborné instalace na místě. Cena se odvíjí od vzdálenosti a náročnosti instalace.</p>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    Kde působíte?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Realizujeme projekty primárně v Plzeňském kraji a v Praze. Po domluvě jsme však schopni zajistit realizace vašich projektů v rámci celé ČR.</p>
                 </div>
             </div>
-            <div class="product-card">
-                <div class="product-card-content">
-                    <h3>Jaká je záruka na produkty?</h3>
-                    <p>Na všechny naše betonové produkty poskytujeme rozšířenou 5letou záruku. Záruka se vztahuje na vady materiálu a zpracování.</p>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    Jak probíhá cenová kalkulace?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Po úvodní konzultaci a zaměření připravíme položkový rozpočet v programu KROS dle ceníků URS. Kalkulace je transparentní — víte přesně, za co platíte. Úvodní konzultace je nezávazná a zdarma.</p>
                 </div>
             </div>
-            <div class="product-card">
-                <div class="product-card-content">
-                    <h3>Můžu si prohlédnout vzorky?</h3>
-                    <p>Samozřejmě! Rádi vám ukážeme vzorky barev a povrchových úprav. Stačí si domluvit schůzku v naší provozovně v Plzni.</p>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-card-content">
-                    <h3>Jak probíhá cenová kalkulace?</h3>
-                    <p>Po úvodní konzultaci připravíme detailní cenovou nabídku včetně vizualizace. Kalkulace je nezávazná a zdarma.</p>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-card-content">
-                    <h3>Kde působíte?</h3>
-                    <p>Primárně působíme v Plzeňském kraji a Praze, ale realizujeme projekty po celé České republice i v zahraničí.</p>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    Jak mohu sledovat průběh stavby?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Přes aplikaci Stavario máte přístup k online stavebnímu deníku, fotodokumentaci a harmonogramu prací. Každý den vidíte fotky z realizace, docházku řemeslníků a aktuální stav projektu.</p>
                 </div>
             </div>
         </div>
@@ -245,42 +279,44 @@
 
     <!-- Footer -->
     <footer>
-        <div class="footer-grid">
+        <div class="footer-main">
             <div class="footer-brand">
-                <a href="index.html" class="logo"><img src="logo.jpg" alt="ProLikam"></a>
-                <p>Progresivní lídři, kteří ukazují, kam směřuje budoucnost. Specializujeme se na designové realizace z ušlechtilého betonu.</p>
+                <a href="index.html" class="logo"><img src="logo-white.png" alt="ProLikam"></a>
+                <p>PROgresivní Lidé, KAM směřuje budoucnost stavebnictví.</p>
             </div>
-            <div class="footer-col">
-                <h4>Služby</h4>
-                <ul>
-                    <li><a href="sluzby.html#vystavba-rd">Výstavba RD</a></li>
-                    <li><a href="sluzby.html#rekonstrukce">Luxusní rekonstrukce</a></li>
-                    <li><a href="sluzby.html#betonove-produkty">Betonové produkty</a></li>
-                    <li><a href="sluzby.html#zahradni-mobiliar">Zahradní mobiliář</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Produkty</h4>
-                <ul>
-                    <li><a href="produkty.html#koupelnove-kolekce">Koupelnové kolekce</a></li>
-                    <li><a href="produkty.html#vany">Vany</a></li>
-                    <li><a href="produkty.html#umyvadla">Umyvadla</a></li>
-                    <li><a href="produkty.html#topeni">Topení</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Kontakt</h4>
-                <ul>
-                    <li><a href="kontakt.html">28. října 1824/70</a></li>
-                    <li><a href="kontakt.html">301 00 Plzeň, Bolevec</a></li>
-                    <li><a href="tel:+420731242645">+420 731 242 645</a></li>
-                    <li><a href="mailto:kucera@prolikam.cz">kucera@prolikam.cz</a></li>
-                </ul>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Stránky</h4>
+                    <ul>
+                        <li><a href="o-nas.html">O nás</a></li>
+                        <li><a href="sluzby.html">Služby</a></li>
+                        <li><a href="realizace.html">Realizace</a></li>
+                        <li><a href="technologie.html">Technologie</a></li>
+                        <li><a href="partneri.html">Partneři</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Služby</h4>
+                    <ul>
+                        <li><a href="sluzby.html#vystavba-rd">Výstavba RD</a></li>
+                        <li><a href="sluzby.html#rekonstrukce">Rekonstrukce</a></li>
+                        <li><a href="sluzby.html#projekce">Projekce a design</a></li>
+                        <li><a href="sluzby.html#zakazkova-vyroba">Zakázková výroba</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Kontakt</h4>
+                    <ul>
+                        <li><span><svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>28. října 1824/70, 301 00 Plzeň</span></li>
+                        <li><a href="tel:+420731242645"><svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+420 731 242 645</a></li>
+                        <li><a href="mailto:info@prolikam.cz"><svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>info@prolikam.cz</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <span>© 2025 ProLikam s.r.o. Všechna práva vyhrazena.</span>
-            <a href="#">Ochrana osobních údajů</a>
+            <span>&copy; 2026 ProLikam s.r.o. | IČ: 23944692</span>
+            <a href="ochrana-osobnich-udaju.html">Ochrana osobních údajů</a>
         </div>
     </footer>
 

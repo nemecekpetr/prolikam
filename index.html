@@ -3,24 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProLikam - Stavíme budoucnost | Designový beton a stavby</title>
-    <meta name="description" content="ProLikam s.r.o. - Progresivní lídři v oblasti designových realizací z ušlechtilého betonu. Výstavba RD, luxusní rekonstrukce, ručně vyráběné vany a umyvadla.">
+    <title>ProLikam - Stavíme budoucnost | Moderní stavební firma</title>
+    <meta name="description" content="ProLikam s.r.o. - Moderní stavební firma v Plzni. Realizujeme rekonstrukce a výstavbu domů s využitím digitálních technologií. Od projektu až po předání klíčů.">
+    <meta property="og:title" content="ProLikam - Stavíme budoucnost">
+    <meta property="og:description" content="Moderní stavební firma v Plzni. Rekonstrukce, výstavba, projekce.">
+    <meta property="og:type" content="website">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <a href="#main" class="skip-link">Přeskočit na obsah</a>
+
     <!-- Navigation -->
     <nav>
         <a href="index.html" class="logo"><img src="logo.jpg" alt="ProLikam"></a>
         <ul class="nav-links">
             <li><a href="o-nas.html">O nás</a></li>
             <li><a href="sluzby.html">Služby</a></li>
-            <li><a href="produkty.html">Produkty</a></li>
+            <li><a href="realizace.html">Realizace</a></li>
             <li><a href="technologie.html">Technologie</a></li>
             <li><a href="partneri.html">Partneři</a></li>
         </ul>
         <a href="kontakt.html" class="nav-cta">Kontakt</a>
-        <button class="mobile-menu-btn" aria-label="Menu">
+        <button class="mobile-menu-btn" aria-label="Otevřít menu" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
@@ -32,7 +39,7 @@
         <ul>
             <li><a href="o-nas.html">O nás</a></li>
             <li><a href="sluzby.html">Služby</a></li>
-            <li><a href="produkty.html">Produkty</a></li>
+            <li><a href="realizace.html">Realizace</a></li>
             <li><a href="technologie.html">Technologie</a></li>
             <li><a href="partneri.html">Partneři</a></li>
             <li><a href="kontakt.html">Kontakt</a></li>
@@ -40,24 +47,22 @@
     </div>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-badge">
-                <span></span> Progresivní stavitelství
-            </div>
-            <h1>Stavíme budoucnost. Efektivně a transparentně.</h1>
-            <p>Jsme lídři v oblasti designových realizací z ušlechtilého betonu. Od rodinných domů po luxusní interiéry s maximálním důrazem na kvalitu a detail.</p>
-            <div class="hero-buttons">
-                <a href="sluzby.html" class="btn-primary">Naše služby</a>
-                <a href="o-nas.html" class="btn-secondary">Zjistit více</a>
-            </div>
+    <section class="hero" id="main">
+        <div class="hero-bg">
+            <img src="http://www.prolikam.cz/image.php?nid=13928&oid=12592836&width=1600" alt="Moderní stavba ProLikam">
         </div>
-        <div class="hero-image">
-            <img src="http://www.prolikam.cz/image.php?nid=13928&oid=12592612&width=900" alt="ProLikam stavba">
+        <div class="hero-content">
+            <span class="hero-tag">Progresivní stavitelství</span>
+            <h1>Stavíme budoucnost. <em>Transparentně.</em></h1>
+            <p class="hero-desc">Jsme moderní stavební firma v Plzni. Realizujeme výstavbu domů a rekonstrukce s digitálním dohledem — od projektu po předání klíčů.</p>
+            <div class="hero-actions">
+                <a href="sluzby.html" class="btn-primary">Naše služby</a>
+                <a href="kontakt.html" class="btn-ghost">Nezávazná poptávka</a>
+            </div>
         </div>
     </section>
 
-    <!-- Stats Bar -->
+    <!-- Trust Bar -->
     <section class="stats-bar">
         <div class="stat-item">
             <div class="stat-number">15+</div>
@@ -65,15 +70,15 @@
         </div>
         <div class="stat-item">
             <div class="stat-number">200+</div>
-            <div class="stat-label">Dokončených projektů</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-number">5</div>
-            <div class="stat-label">Let záruka</div>
+            <div class="stat-label">Projektů</div>
         </div>
         <div class="stat-item">
             <div class="stat-number">100%</div>
-            <div class="stat-label">Spokojenost klientů</div>
+            <div class="stat-label">Online přehled</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">0</div>
+            <div class="stat-label">Skrytých poplatků</div>
         </div>
     </section>
 
@@ -82,56 +87,83 @@
         <div class="section-header">
             <span class="section-tag">Co nabízíme</span>
             <h2 class="section-title">Naše služby</h2>
-            <p class="section-subtitle">Kompletní stavební a designové služby od A do Z s důrazem na kvalitu a transparentnost.</p>
+            <p class="section-subtitle">Kompletní stavební servis řízený moderními technologiemi. Od projektu po předání — vše pod jednou střechou.</p>
         </div>
         <div class="services-grid">
             <a href="sluzby.html#vystavba-rd" class="service-card">
-                <img src="http://www.prolikam.cz/image.php?nid=13928&oid=12592836&width=900" alt="Výstavba RD">
+                <img src="http://www.prolikam.cz/image.php?nid=13928&oid=12592836&width=600" alt="Výstavba na klíč" loading="lazy">
                 <div class="service-overlay">
-                    <h3>Výstavba RD</h3>
-                    <p>Kompletní výstavba rodinných domů od A do Z dle projektové dokumentace</p>
-                    <span class="service-link">Více info →</span>
+                    <span class="service-card-num">01</span>
+                    <h3>Výstavba na klíč</h3>
+                    <p>Kompletní realizace rodinných domů. Od vyřízení povolení přes zemní práce až po finální úklid. S denním online přehledem.</p>
+                    <span class="service-link">Více info <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 7h12M8 2l5 5-5 5"/></svg></span>
                 </div>
             </a>
             <a href="sluzby.html#rekonstrukce" class="service-card">
-                <img src="http://www.prolikam.cz/image.php?nid=13928&oid=12592853&width=900" alt="Luxusní rekonstrukce">
+                <img src="http://www.prolikam.cz/image.php?nid=13928&oid=12592853&width=600" alt="Kompletní rekonstrukce" loading="lazy">
                 <div class="service-overlay">
-                    <h3>Luxusní rekonstrukce</h3>
-                    <p>Rekonstrukce prémiových interiérů s maximálním důrazem na detail</p>
-                    <span class="service-link">Více info →</span>
+                    <span class="service-card-num">02</span>
+                    <h3>Kompletní rekonstrukce</h3>
+                    <p>Proměna bytů i komerčních prostor. Zajistíme zaměření, dokumentaci i vizualizace. Vše pod jedním týmem.</p>
+                    <span class="service-link">Více info <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 7h12M8 2l5 5-5 5"/></svg></span>
                 </div>
             </a>
-            <a href="sluzby.html#betonove-produkty" class="service-card">
-                <img src="http://www.prolikam.cz/image.php?nid=13928&oid=12592854&width=900" alt="Zahradní mobiliář">
+            <a href="sluzby.html#projekce" class="service-card">
+                <img src="http://www.prolikam.cz/image.php?nid=13928&oid=12598882&width=600" alt="Projekce a design" loading="lazy">
                 <div class="service-overlay">
-                    <h3>Betonové produkty</h3>
-                    <p>Designové kuchyňské desky, parapety a zahradní mobiliář</p>
-                    <span class="service-link">Více info →</span>
+                    <span class="service-card-num">03</span>
+                    <h3>Projekce a design</h3>
+                    <p>3D vizualizace, dispoziční řešení a projektová dokumentace. Přesný rozpočet ještě před stavbou.</p>
+                    <span class="service-link">Více info <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 7h12M8 2l5 5-5 5"/></svg></span>
+                </div>
+            </a>
+            <a href="sluzby.html#zakazkova-vyroba" class="service-card">
+                <img src="http://www.prolikam.cz/image.php?nid=13928&oid=12592854&width=600" alt="Designová výroba" loading="lazy">
+                <div class="service-overlay">
+                    <span class="service-card-num">04</span>
+                    <h3>Designová výroba</h3>
+                    <p>Autorské betonové prvky na míru — desky, parapety, umyvadla. Punc originality pro váš interiér.</p>
+                    <span class="service-link">Více info <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 7h12M8 2l5 5-5 5"/></svg></span>
                 </div>
             </a>
         </div>
     </section>
 
-    <!-- Products Section -->
-    <section class="products">
-        <div class="products-container">
-            <div class="products-content">
-                <span class="section-tag">Naše produkty</span>
-                <h2>Ručně vyráběné originály z vibrolitého betonu</h2>
-                <p>Ztvárněte své sny prostřednictvím unikátních van, umyvadel a topení. Díky technologii vibrolitého betonu vám do interiéru usadíme ručně zpracovaný originální kus, který se odliší od tisíců uniformních koupelen.</p>
-                <ul class="product-features">
-                    <li>Kvalitní ruční práce</li>
-                    <li>5 let záruka na produkty</li>
-                    <li>Ručně vyráběné originály</li>
-                    <li>Vlastní výroba na míru</li>
-                    <li>Ekologické produkty</li>
-                </ul>
-                <a href="produkty.html" class="btn-primary">Prohlédnout kolekce</a>
+    <!-- Process Section -->
+    <section class="content-section">
+        <div class="section-header">
+            <span class="section-tag">Průběh spolupráce</span>
+            <h2 class="section-title">Jak probíhá realizace</h2>
+            <p class="section-subtitle">Žádné vícenáklady od oka. Vše má svůj řád — od prvního kontaktu po předání klíčů.</p>
+        </div>
+        <div class="process-grid">
+            <div class="process-step">
+                <div class="process-step-num">01</div>
+                <div class="process-step-content">
+                    <h3>Konzultace a zaměření</h3>
+                    <p>Přijedeme, zaměříme prostor a zjistíme vaše potřeby. U větších akcí domluvíme rozsah projektové přípravy.</p>
+                </div>
             </div>
-            <div class="products-gallery">
-                <a href="produkty.html#koupelnove-kolekce"><img src="http://www.prolikam.cz/image.php?nid=13928&oid=4380586&width=600" alt="Koupelnové kolekce"></a>
-                <a href="produkty.html#vany"><img src="http://www.prolikam.cz/image.php?nid=13928&oid=4380587&width=600" alt="Vany"></a>
-                <a href="produkty.html#umyvadla"><img src="http://www.prolikam.cz/image.php?nid=13928&oid=4380588&width=600" alt="Umyvadla"></a>
+            <div class="process-step">
+                <div class="process-step-num">02</div>
+                <div class="process-step-content">
+                    <h3>Rozpočet a smlouva</h3>
+                    <p>V programu KROS připravíme položkový rozpočet dle ceníků URS. Víte přesně, za co platíte. Po odsouhlasení podepíšeme smlouvu.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-step-num">03</div>
+                <div class="process-step-content">
+                    <h3>Realizace online</h3>
+                    <p>Přes aplikaci Stavario dostáváte denně fotoreporty, záznam stavebního deníku a vidíte postup prací z mobilu.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-step-num">04</div>
+                <div class="process-step-content">
+                    <h3>Předání a servis</h3>
+                    <p>Stavbu společně projdeme, podepíšeme předávací protokol. Nabízíme pozáruční servis a podporu.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -139,30 +171,38 @@
     <!-- Technology Section -->
     <section class="technology">
         <div class="section-header">
-            <span class="section-tag" style="color: var(--sage-light);">Jak pracujeme</span>
+            <span class="section-tag" style="color: var(--gold-light);">Jak pracujeme</span>
             <h2 class="section-title" style="color: var(--white);">Technologie a výhody</h2>
-            <p class="section-subtitle" style="color: rgba(255,255,255,0.7);">Moderní přístupy a technologie pro efektivní a transparentní realizaci.</p>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.7);">Proč stavět právě s námi? Digitální řízení, které šetří váš čas i peníze.</p>
         </div>
         <div class="tech-grid">
             <a href="technologie.html#kvalita" class="tech-card">
-                <div class="tech-icon">✓</div>
-                <h3>Kvalita a transparentnost</h3>
-                <p>Vylepšené řízení projektů, digitalizace a plná transparentnost v každém kroku.</p>
+                <div class="tech-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                </div>
+                <h3>Online stavební deník</h3>
+                <p>Díky systému Stavario máte přístup k fotodokumentaci a harmonogramu prací v reálném čase.</p>
             </a>
             <a href="technologie.html#bim" class="tech-card">
-                <div class="tech-icon">◈</div>
-                <h3>Digitalizace a BIM</h3>
-                <p>Využíváme BIM, KROS a moderní stavební software pro přesné plánování.</p>
+                <div class="tech-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                </div>
+                <h3>Přesné plánování</h3>
+                <p>Rozpočty v softwaru KROS, harmonogramy v MS Project. Eliminujeme prostoje a dodržujeme termíny.</p>
             </a>
-            <a href="technologie.html#lean" class="tech-card">
-                <div class="tech-icon">⚡</div>
-                <h3>Lean Management</h3>
-                <p>Neustálá optimalizace procesů pro maximální efektivitu a úsporu nákladů.</p>
+            <a href="technologie.html#management" class="tech-card">
+                <div class="tech-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <h3>Stabilní týmy</h3>
+                <p>Naše prověřené týmy profesionálů jsou motivováni bonusovým systémem za kvalitu odvedené práce.</p>
             </a>
-            <a href="technologie.html#tym" class="tech-card">
-                <div class="tech-icon">★</div>
-                <h3>Stabilní tým</h3>
-                <p>Vlastní motivovaní zaměstnanci a prověření subdodavatelé.</p>
+            <a href="technologie.html#beton" class="tech-card">
+                <div class="tech-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                </div>
+                <h3>Vlastní výroba</h3>
+                <p>Autorské betonové prvky — parapety, desky, umyvadla — které obohatí vaše interiéry.</p>
             </a>
         </div>
     </section>
@@ -170,15 +210,37 @@
     <!-- About Preview Section -->
     <section class="about-preview">
         <div class="about-preview-container">
-            <div class="about-preview-image">
-                <img src="http://www.prolikam.cz/image.php?nid=13928&oid=12598832&width=900" alt="Náš tým">
+            <div class="about-preview-image" style="position: relative;">
+                <img src="http://www.prolikam.cz/image.php?nid=13928&oid=12598832&width=900" alt="Tým ProLikam" loading="lazy">
+                <div class="about-image-accent">
+                    <div class="accent-number">15+</div>
+                    <div class="accent-label">Let v oboru</div>
+                </div>
             </div>
             <div class="about-preview-content">
                 <span class="section-tag">Kdo jsme</span>
-                <h2>Progresivní lídři v designu betonu</h2>
-                <p>ProLikam s.r.o. jsou PROgresivní Lídři, kteří ukazují, KAM směřuje budoucnost. Specializujeme se na designové realizace z ušlechtilého betonu v Plzeňském kraji a Praze.</p>
-                <p>Od ručně vyráběných van a umyvadel po kompletní výstavbu rodinných domů – vždy s důrazem na kvalitu, efektivitu a transparentnost.</p>
-                <a href="o-nas.html" class="btn-secondary">Více o nás</a>
+                <h2>ProLiKam – Stavíme na pevných základech</h2>
+                <p>Název ProLiKam znamená PROgresivní Lidé, KAM směřuje budoucnost. Začínali jsme s vášní pro detail při výrobě designového betonu. Tuto preciznost jsme přenesli do velkého stavebnictví.</p>
+                <p>Vyměnili jsme tužku a papír za tablety a cloudové systémy. Naším cílem není jen postavit zeď, ale provést vás celým procesem bez stresu, s garancí ceny a kvality.</p>
+                <div class="about-values">
+                    <div class="about-value">
+                        <h4>Transparentnost</h4>
+                        <p>Denní fotoreporty a online stavební deník</p>
+                    </div>
+                    <div class="about-value">
+                        <h4>Přesnost</h4>
+                        <p>Položkový rozpočet v KROS, HMG v MS Project</p>
+                    </div>
+                    <div class="about-value">
+                        <h4>Kvalita</h4>
+                        <p>Stálé týmy s bonusovým systémem za kvalitu</p>
+                    </div>
+                    <div class="about-value">
+                        <h4>Inovace</h4>
+                        <p>BIM, Stavario, Adobe Sign — digitální procesy</p>
+                    </div>
+                </div>
+                <a href="o-nas.html" class="btn-outline">Více o nás</a>
             </div>
         </div>
     </section>
@@ -187,48 +249,54 @@
     <section class="cta">
         <span class="section-tag">Začněme spolupráci</span>
         <h2>Máte projekt na srdci?</h2>
-        <p>Kontaktujte nás a společně proměníme vaše vize ve skutečnost. Nabízíme bezplatnou konzultaci a cenovou nabídku.</p>
-        <a href="kontakt.html" class="btn-primary">Kontaktujte nás</a>
+        <p>Kontaktujte nás a společně proměníme vaše vize ve skutečnost. Nabízíme bezplatnou konzultaci přímo na místě vaší budoucí stavby.</p>
+        <div class="cta-actions">
+            <a href="kontakt.html" class="btn-primary">Nezávazná poptávka</a>
+            <a href="tel:+420731242645" class="btn-outline">+420 731 242 645</a>
+        </div>
+        <p class="cta-phone">Nebo nám napište na <a href="mailto:info@prolikam.cz">info@prolikam.cz</a></p>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-grid">
+        <div class="footer-main">
             <div class="footer-brand">
-                <a href="index.html" class="logo"><img src="logo.jpg" alt="ProLikam"></a>
-                <p>Progresivní lídři, kteří ukazují, kam směřuje budoucnost. Specializujeme se na designové realizace z ušlechtilého betonu.</p>
+                <a href="index.html" class="logo"><img src="logo-white.png" alt="ProLikam"></a>
+                <p>PROgresivní Lidé, KAM směřuje budoucnost stavebnictví.</p>
             </div>
-            <div class="footer-col">
-                <h4>Služby</h4>
-                <ul>
-                    <li><a href="sluzby.html#vystavba-rd">Výstavba RD</a></li>
-                    <li><a href="sluzby.html#rekonstrukce">Luxusní rekonstrukce</a></li>
-                    <li><a href="sluzby.html#betonove-produkty">Betonové produkty</a></li>
-                    <li><a href="sluzby.html#zahradni-mobiliar">Zahradní mobiliář</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Produkty</h4>
-                <ul>
-                    <li><a href="produkty.html#koupelnove-kolekce">Koupelnové kolekce</a></li>
-                    <li><a href="produkty.html#vany">Vany</a></li>
-                    <li><a href="produkty.html#umyvadla">Umyvadla</a></li>
-                    <li><a href="produkty.html#topeni">Topení</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Kontakt</h4>
-                <ul>
-                    <li><a href="kontakt.html">28. října 1824/70</a></li>
-                    <li><a href="kontakt.html">301 00 Plzeň, Bolevec</a></li>
-                    <li><a href="tel:+420731242645">+420 731 242 645</a></li>
-                    <li><a href="mailto:kucera@prolikam.cz">kucera@prolikam.cz</a></li>
-                </ul>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Stránky</h4>
+                    <ul>
+                        <li><a href="o-nas.html">O nás</a></li>
+                        <li><a href="sluzby.html">Služby</a></li>
+                        <li><a href="realizace.html">Realizace</a></li>
+                        <li><a href="technologie.html">Technologie</a></li>
+                        <li><a href="partneri.html">Partneři</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Služby</h4>
+                    <ul>
+                        <li><a href="sluzby.html#vystavba-rd">Výstavba RD</a></li>
+                        <li><a href="sluzby.html#rekonstrukce">Rekonstrukce</a></li>
+                        <li><a href="sluzby.html#projekce">Projekce a design</a></li>
+                        <li><a href="sluzby.html#zakazkova-vyroba">Zakázková výroba</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Kontakt</h4>
+                    <ul>
+                        <li><span><svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>28. října 1824/70, 301 00 Plzeň</span></li>
+                        <li><a href="tel:+420731242645"><svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+420 731 242 645</a></li>
+                        <li><a href="mailto:info@prolikam.cz"><svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>info@prolikam.cz</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <span>© 2025 ProLikam s.r.o. Všechna práva vyhrazena.</span>
-            <a href="#">Ochrana osobních údajů</a>
+            <span>&copy; 2026 ProLikam s.r.o. | IČ: 23944692</span>
+            <a href="ochrana-osobnich-udaju.html">Ochrana osobních údajů</a>
         </div>
     </footer>
 

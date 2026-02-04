@@ -3,14 +3,16 @@
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile Menu Toggle
+    // Mobile Menu Toggle with ARIA
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const mobileMenu = document.querySelector('.mobile-menu');
 
     if (mobileMenuBtn && mobileMenu) {
         mobileMenuBtn.addEventListener('click', function() {
-            this.classList.toggle('active');
+            const isOpen = this.classList.toggle('active');
             mobileMenu.classList.toggle('active');
+            this.setAttribute('aria-expanded', isOpen);
+            this.setAttribute('aria-label', isOpen ? 'Zavřít menu' : 'Otevřít menu');
         });
 
         // Close mobile menu when clicking on a link
@@ -19,6 +21,8 @@ document.addEventListener('DOMContentLoaded', function() {
             link.addEventListener('click', function() {
                 mobileMenuBtn.classList.remove('active');
                 mobileMenu.classList.remove('active');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                mobileMenuBtn.setAttribute('aria-label', 'Otevřít menu');
             });
         });
     }
@@ -32,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             nav.classList.remove('scrolled');
         }
-    });
+    }, { passive: true });
 
     // Active navigation link
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
@@ -79,11 +83,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     // Observe elements for animation
-    const animateElements = document.querySelectorAll('.service-card, .tech-card, .product-card, .stat-item, .content-grid, .partner-item');
-    animateElements.forEach(el => {
+    const animateElements = document.querySelectorAll('.service-card, .tech-card, .product-card, .stat-item, .content-grid, .partner-item, .process-step, .about-value, .contact-channel, .faq-item');
+    animateElements.forEach((el, i) => {
         el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        el.style.transform = 'translateY(24px)';
+        el.style.transition = 'opacity 0.6s ease ' + (i % 6) * 0.08 + 's, transform 0.6s ease ' + (i % 6) * 0.08 + 's';
         observer.observe(el);
     });
 
@@ -97,47 +101,93 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
 
-    // Form validation
-    const contactForm = document.querySelector('.contact-form form');
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const item = this.parentElement;
+            const isOpen = item.classList.contains('open');
+
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(i => {
+                i.classList.remove('open');
+                const q = i.querySelector('.faq-question');
+                if (q) q.setAttribute('aria-expanded', 'false');
+            });
+
+            // Toggle current
+            if (!isOpen) {
+                item.classList.add('open');
+                this.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
+
+    // Show success message if redirected back after form submission
+    if (window.location.search.includes('sent=1')) {
+        const formEl = document.getElementById('contactForm');
+        const formSuccess = document.getElementById('formSuccess');
+        if (formEl && formSuccess) {
+            formEl.style.display = 'none';
+            formSuccess.classList.add('visible');
+        }
+    }
+
+    // Form validation with error states
+    const contactForm = document.querySelector('.contact-form form, #contactForm');
     if (contactForm) {
+        const submitBtn = contactForm.querySelector('.form-submit, .btn-primary[type="submit"]');
+        const formSuccess = document.getElementById('formSuccess');
+
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
 
-            // Basic validation
+            // Clear previous errors
+            this.querySelectorAll('.form-group').forEach(g => g.classList.remove('has-error'));
+
             const name = this.querySelector('input[name="name"]');
             const email = this.querySelector('input[name="email"]');
             const message = this.querySelector('textarea[name="message"]');
+            const gdpr = this.querySelector('input[name="gdpr"]');
 
             let isValid = true;
 
             if (name && name.value.trim() === '') {
-                showError(name, 'Prosím vyplňte jméno');
+                const fg = name.closest('.form-group');
+                if (fg) fg.classList.add('has-error');
                 isValid = false;
             }
 
             if (email && !isValidEmail(email.value)) {
-                showError(email, 'Prosím zadejte platný email');
+                const fg = email.closest('.form-group');
+                if (fg) fg.classList.add('has-error');
                 isValid = false;
             }
 
             if (message && message.value.trim() === '') {
-                showError(message, 'Prosím napište zprávu');
+                const fg = message.closest('.form-group');
+                if (fg) fg.classList.add('has-error');
+                isValid = false;
+            }
+
+            if (gdpr && !gdpr.checked) {
                 isValid = false;
             }
 
             if (isValid) {
-                // Show success message
-                const btn = this.querySelector('.btn-primary');
-                const originalText = btn.textContent;
-                btn.textContent = 'Odesláno!';
-                btn.style.background = '#9caf88';
-
-                setTimeout(() => {
-                    btn.textContent = originalText;
-                    btn.style.background = '';
-                    this.reset();
-                }, 3000);
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Odesílám...';
+                }
+                this.submit();
             }
+        });
+
+        // Clear errors on input
+        contactForm.querySelectorAll('input, textarea').forEach(input => {
+            input.addEventListener('input', function() {
+                const fg = this.closest('.form-group');
+                if (fg) fg.classList.remove('has-error');
+            });
         });
     }
 
@@ -145,42 +195,22 @@ document.addEventListener('DOMContentLoaded', function() {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
 
-    function showError(input, message) {
-        input.style.borderColor = '#e74c3c';
-
-        // Remove existing error
-        const existingError = input.parentNode.querySelector('.error-message');
-        if (existingError) {
-            existingError.remove();
-        }
-
-        // Add error message
-        const error = document.createElement('span');
-        error.className = 'error-message';
-        error.style.color = '#e74c3c';
-        error.style.fontSize = '0.85rem';
-        error.style.marginTop = '0.25rem';
-        error.style.display = 'block';
-        error.textContent = message;
-        input.parentNode.appendChild(error);
-
-        // Clear error on input
-        input.addEventListener('input', function() {
-            this.style.borderColor = '';
-            const errorMsg = this.parentNode.querySelector('.error-message');
-            if (errorMsg) errorMsg.remove();
-        }, { once: true });
-    }
-
-    // Parallax effect for hero image (subtle)
-    const heroImage = document.querySelector('.hero-image img');
+    // Parallax effect for hero image (throttled via rAF)
+    const heroImage = document.querySelector('.hero-bg img');
     if (heroImage) {
+        let ticking = false;
         window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            if (scrolled < window.innerHeight) {
-                heroImage.style.transform = `translateY(${scrolled * 0.2}px)`;
+            if (!ticking) {
+                requestAnimationFrame(function() {
+                    const scrolled = window.pageYOffset;
+                    if (scrolled < window.innerHeight) {
+                        heroImage.style.transform = 'translateY(' + scrolled * 0.15 + 'px)';
+                    }
+                    ticking = false;
+                });
+                ticking = true;
             }
-        });
+        }, { passive: true });
     }
 
     // Counter animation for stats
@@ -206,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (isNaN(number)) return;
 
         let current = 0;
-        const increment = number / 50;
+        const increment = number / 40;
         const timer = setInterval(() => {
             current += increment;
             if (current >= number) {
@@ -215,6 +245,6 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 element.textContent = Math.floor(current) + suffix;
             }
-        }, 30);
+        }, 35);
     }
 });
