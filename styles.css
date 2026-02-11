@@ -32,8 +32,8 @@
     --sage-dark: var(--gold-dark);
 
     /* Typography - Fluid Scale */
-    --font-primary: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    --font-display: 'DM Serif Display', Georgia, serif;
+    --font-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-display: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
     /* Fluid font sizes: clamp(min, preferred, max) */
     --text-xs: clamp(0.7rem, 0.65rem + 0.25vw, 0.8rem);
@@ -182,9 +182,10 @@ nav.scrolled {
     z-index: 1001;
 }
 
-.logo img {
+nav .logo img {
     height: clamp(64px, 5vw + 40px, 96px);
     width: auto;
+    mix-blend-mode: multiply;
 }
 
 /* Text logo fallback */
@@ -1622,7 +1623,7 @@ footer::before {
    Dark Section Utility
    ============================================ */
 .dark-section {
-    background: var(--earth-dark);
+    background: var(--earth-dark) !important;
     color: var(--white);
 }
 
@@ -1636,6 +1637,19 @@ footer::before {
 
 .dark-section .section-subtitle {
     color: rgba(255,255,255,0.7);
+}
+
+.dark-section .tech-card {
+    color: var(--white);
+}
+
+.dark-section .tech-card h3,
+.dark-section .tech-card p {
+    color: var(--white);
+}
+
+.dark-section .tech-card p {
+    opacity: 0.8;
 }
 
 /* ============================================
@@ -2234,6 +2248,99 @@ footer::before {
    ============================================ */
 @media (prefers-color-scheme: dark) {
     /* Can be enabled if needed */
+}
+
+/* ============================================
+   Cookie Consent Bar
+   ============================================ */
+.cookie-consent {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: rgba(44, 44, 44, 0.97);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(0);
+    transition: transform 0.4s ease;
+}
+
+.cookie-consent.hidden {
+    transform: translateY(100%);
+    pointer-events: none;
+}
+
+.cookie-consent-inner {
+    max-width: var(--max-width, 1200px);
+    margin: 0 auto;
+    padding: var(--space-md) var(--container-padding);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+}
+
+.cookie-consent-inner p {
+    font-size: var(--text-sm);
+    color: var(--white);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.cookie-consent-inner p a {
+    color: var(--gold-light);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.cookie-consent-inner p a:hover {
+    color: var(--gold);
+}
+
+.cookie-consent-actions {
+    display: flex;
+    gap: var(--space-sm);
+    flex-shrink: 0;
+}
+
+.btn-cookie-reject {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.7);
+    font-family: var(--font-primary);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    padding: 0.6rem 1.25rem;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    min-height: var(--touch-target);
+    white-space: nowrap;
+}
+
+.btn-cookie-reject:hover {
+    border-color: rgba(255, 255, 255, 0.6);
+    color: var(--white);
+}
+
+.cookie-consent .btn-primary {
+    white-space: nowrap;
+}
+
+@media (max-width: 639px) {
+    .cookie-consent-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cookie-consent-actions {
+        width: 100%;
+    }
+
+    .cookie-consent-actions .btn-primary,
+    .cookie-consent-actions .btn-cookie-reject {
+        flex: 1;
+    }
 }
 
 /* ============================================
