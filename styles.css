@@ -185,7 +185,15 @@ nav.scrolled {
 nav .logo img {
     height: clamp(64px, 5vw + 40px, 96px);
     width: auto;
+}
+
+/* Remove white background from JPG logo - requires transparent PNG for best results */
+nav:not(.scrolled) .logo img {
     mix-blend-mode: multiply;
+}
+
+nav.scrolled .logo img {
+    mix-blend-mode: normal;
 }
 
 /* Text logo fallback */
@@ -1650,6 +1658,76 @@ footer::before {
 
 .dark-section .tech-card p {
     opacity: 0.8;
+}
+
+/* ============================================
+   Values Section (Light Background)
+   ============================================ */
+.values-section {
+    background: var(--cream);
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+}
+
+@media (min-width: 640px) {
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .values-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.value-card {
+    background: var(--white);
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    transition: all var(--transition-base);
+    border: 1px solid var(--sand);
+}
+
+.value-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.value-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--gold);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-md);
+}
+
+.value-icon svg {
+    width: 26px;
+    height: 26px;
+    color: var(--white);
+}
+
+.value-card h3 {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: var(--space-sm);
+}
+
+.value-card p {
+    font-size: var(--text-sm);
+    color: var(--earth);
+    line-height: 1.6;
 }
 
 /* ============================================
