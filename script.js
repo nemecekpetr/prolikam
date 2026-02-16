@@ -251,7 +251,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ============================================
     // Cookie Consent + Google Analytics
     // ============================================
-    var GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+    var GA_MEASUREMENT_ID = 'G-EP7TPYH9FB';
 
     function loadGoogleAnalytics() {
         var script = document.createElement('script');
