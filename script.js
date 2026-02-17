@@ -2,6 +2,11 @@
 // ProLikam - Main JavaScript
 // ============================================
 
+// Redirect apex domain to www (canonical URL)
+if (window.location.hostname === 'prolikam.cz') {
+    window.location.replace('https://www.prolikam.cz' + window.location.pathname + window.location.search);
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile Menu Toggle with ARIA
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
